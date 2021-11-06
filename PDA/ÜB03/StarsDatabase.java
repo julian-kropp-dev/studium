@@ -48,5 +48,6 @@ public class StarsDatabase {
         if (!foundDistance) {
             System.out.println("They\'re all too far away :(");
         }
+        scan.close();
     }
 }
