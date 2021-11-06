@@ -1,0 +1,24 @@
+(*Anfragen werden mit "->" getrennt*)
+
+smallLetter = "a" | ... | "z";
+capitalLetter = "A" | ... | "Z";
+letter = smallLetter | capitalLetter;
+ort = capitalLetter, {smallLetter}, {" ", letter, {smallLetter}};
+
+zeit = ("0" | ... | "24"), ":", ("0" | ... | "59");
+
+ortAussage = "Ich bin in ", ort, ".";
+zeitAussage = "Es ist ", zeit, "Uhr.";
+
+frage = "Wie ist das Wetter?";
+ortFrage = "Wie ist das Wetter in ", ort, "?";
+zeitFrage = "Wie ist das Wetter um ", zeit, "Uhr?";
+vollstaendigeFrage = "Wie ist das Wetter in ", ort, "um ", zeit "Uhr?";
+
+zeitGueltig = zeitAussage, "->", ortFrage;
+ortGueltig = ortAussage, "->", zeitFrage;
+beidesGueltig1 = ortAussage, "->", zeitAussage, "->", frage;
+beidesGueltig2 = zeitAussage, "->", ortAussage, "->", frage;
+
+gueltig = (vollstaendigeFrage | zeitGueltig | ortGueltig | beidesGueltig1 | beidesGueltig2),
+          {"->", (vollstaendigeFrage | frage | ortFrage | zeitFrage | ortAussage | zeitAussage)};
