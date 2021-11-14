@@ -1,7 +1,7 @@
 import java.util.HashSet;
 
 public class sudoku {
-    public static void main(String[] args) {
+    public static void main(String[] args) {        // input
         int [][] sudoku = new int [][] {
             { 0 , 9 , 0 , 0 , 0 , 0 , 1 , 1 , 0 } ,
             { 8 , 0 , 4 , 0 , 2 , 0 , 3 , 0 , 7 } ,
@@ -13,7 +13,7 @@ public class sudoku {
             { 1 , 0 , 7 , 0 , 6 , 0 , 4 , 0 , 9 } ,
             { 0 , 3 , 0 , 0 , 0 , 0 , 0 , 8 , 0 }
         };
-        int [][] layout = new int [][] {            // squara layout         
+        int [][] layout = new int [][] {            // square layout         
             { 0 , 0 , 0 , 1 , 1 , 1 , 2 , 2 , 2} ,
             { 0 , 0 , 0 , 1 , 1 , 1 , 2 , 2 , 2} ,
             { 0 , 0 , 0 , 1 , 1 , 1 , 2 , 2 , 2} ,
