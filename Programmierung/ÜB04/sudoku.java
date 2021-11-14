@@ -13,7 +13,7 @@ public class sudoku {
             { 1 , 0 , 7 , 0 , 6 , 0 , 4 , 0 , 9 } ,
             { 0 , 3 , 0 , 0 , 0 , 0 , 0 , 8 , 0 }
         };
-        int [][] layout = new int [][] {
+        int [][] layout = new int [][] {            // squara layout         
             { 0 , 0 , 0 , 1 , 1 , 1 , 2 , 2 , 2} ,
             { 0 , 0 , 0 , 1 , 1 , 1 , 2 , 2 , 2} ,
             { 0 , 0 , 0 , 1 , 1 , 1 , 2 , 2 , 2} ,
@@ -26,12 +26,12 @@ public class sudoku {
         };
 
         HashSet<String> discovered = new HashSet();
-        
-        for (int r = 0; r < 9; r++) {           // loop rows
-            for (int c = 0; c < 9 ; c++) {      // loop columns  
+        long startTime = System.nanoTime();
+        for (int r = 0; r < 9; r++) {               // loop rows
+            for (int c = 0; c < 9 ; c++) {          // loop columns  
                 int current_value = sudoku[r][c];
-                if (current_value != 0) {
-                    if (!discovered.add("Duplicate number <"+current_value+"> in row "+r)) {
+                if (current_value != 0) {                                                       // ignore empty fields
+                    if (!discovered.add("Duplicate number <"+current_value+"> in row "+r)) {    // HashSet can not contain duplicate elements -> returns false if element already exists
                         System.out.println("Duplicate number <"+current_value+"> in row "+r);
                     }
                     if (!discovered.add("Duplicate number <"+current_value+"> in column "+c)) {
@@ -44,11 +44,8 @@ public class sudoku {
             }
             
         }
-
-
-
-
-
-    }
-    
+        long stopTime = System.nanoTime();
+        long time = (stopTime - startTime)/1000000;
+        System.out.println("This took me around: "+time+" ms");
+    }    
 }
