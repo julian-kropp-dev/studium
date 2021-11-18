@@ -1,5 +1,7 @@
+package ÜB01;
+
 public class Plus7 {
-	public static void main (String[] args) {
+	public static void main(String[] args) {
 		int seven = 7;
 		int counter = 0;
 		while (seven <= 30) {

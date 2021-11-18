@@ -1,3 +1,5 @@
+package ÜB03;
+
 import java.util.Scanner;
 
 public class StarsDatabase {

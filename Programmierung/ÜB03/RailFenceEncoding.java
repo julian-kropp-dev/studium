@@ -1,3 +1,5 @@
+package ÜB03;
+
 public class RailFenceEncoding {
     public static void main(String[] args) {
 

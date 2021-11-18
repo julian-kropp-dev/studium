@@ -1,3 +1,5 @@
+package ÜB04;
+
 public class ArrayMerger {
     public static void main(String[] args) {
         int[] arr1 = new int[] { 1, 3, 3, 5, 6, 9 };

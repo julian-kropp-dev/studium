@@ -1,3 +1,5 @@
+package ÜB04;
+
 import java.util.HashSet;
 
 public class Sudoku {
