@@ -35,6 +35,7 @@ public class Ratespiel {
             // count the trys needed
             trys++;
         }
+        scan.close();
 
     }
 }

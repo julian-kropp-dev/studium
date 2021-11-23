@@ -13,7 +13,7 @@ public class Sudoku {
                 { 3, 3, 3, 4, 4, 4, 5, 5, 5 }, { 3, 3, 3, 4, 4, 4, 5, 5, 5 }, { 3, 3, 3, 4, 4, 4, 5, 5, 5 },
                 { 6, 6, 6, 7, 7, 7, 8, 8, 8 }, { 6, 6, 6, 7, 7, 7, 8, 8, 8 }, { 6, 6, 6, 7, 7, 7, 8, 8, 8 }, };
 
-        HashSet<String> discovered = new HashSet();
+        HashSet<String> discovered = new HashSet<String>();
         long startTime = System.nanoTime();
         for (int r = 0; r < 9; r++) { // loop rows
             for (int c = 0; c < 9; c++) { // loop columns

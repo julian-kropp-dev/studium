@@ -10,7 +10,6 @@ public class Kostenberechnung {
         System.out.println("Anzahl Downloads (>=0): ");
         int downloads = scan.nextInt();
 
-        int free = 5;
         int twenty = 30;
         float price = 0.0F;
         // using decimal format for a fancy looking price

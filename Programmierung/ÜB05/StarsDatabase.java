@@ -11,8 +11,7 @@ public class StarsDatabase {
             "TYC 2907-1275-1", "WISE J1049-5319A" };
     public static double[] distances = new double[] { 8.6D, 4.37D, 860D, 2000D, 6.589D };
     // public static double[] apparentMagitude = new double[] { -1.46D, -0.27D,
-    // 0.13D, 2.92D,
-    // 14.94D };
+    // 0.13D, 2.92D, 14.94D };
     public static String[] types = new String[] { "Main sequence", "Main sequence", "Blue supergiant",
             "Yellow supergiant", "Brown dwarf" };
 
