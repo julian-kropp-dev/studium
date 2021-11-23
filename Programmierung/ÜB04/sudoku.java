@@ -3,11 +3,11 @@ package ÜB04;
 import java.util.HashSet;
 
 public class Sudoku {
-    public static void main(String[] args) { // input
-        int[][] sudoku = new int[][] { { 0, 9, 0, 0, 0, 0, 1, 1, 0 }, { 8, 0, 4, 0, 2, 0, 3, 0, 7 },
-                { 0, 6, 0, 9, 0, 7, 0, 2, 0 }, { 0, 0, 5, 0, 3, 0, 1, 0, 0 }, { 0, 7, 0, 5, 0, 1, 0, 3, 0 },
-                { 0, 0, 3, 0, 9, 0, 8, 0, 0 }, { 0, 2, 0, 8, 0, 5, 0, 6, 0 }, { 1, 0, 7, 0, 6, 0, 4, 0, 9 },
-                { 0, 3, 0, 0, 0, 0, 0, 8, 0 } };
+    public static void main(String[] args) {
+        int[][] sudoku = new int[][] { // input
+                { 0, 9, 0, 0, 0, 0, 1, 1, 0 }, { 8, 0, 4, 0, 2, 0, 3, 0, 7 }, { 0, 6, 0, 9, 0, 7, 0, 2, 0 },
+                { 0, 0, 5, 0, 3, 0, 1, 0, 0 }, { 0, 7, 0, 5, 0, 1, 0, 3, 0 }, { 0, 0, 3, 0, 9, 0, 8, 0, 0 },
+                { 0, 2, 0, 8, 0, 5, 0, 6, 0 }, { 1, 0, 7, 0, 6, 0, 4, 0, 9 }, { 0, 3, 0, 0, 0, 0, 0, 8, 0 } };
         int[][] layout = new int[][] { // square layout
                 { 0, 0, 0, 1, 1, 1, 2, 2, 2 }, { 0, 0, 0, 1, 1, 1, 2, 2, 2 }, { 0, 0, 0, 1, 1, 1, 2, 2, 2 },
                 { 3, 3, 3, 4, 4, 4, 5, 5, 5 }, { 3, 3, 3, 4, 4, 4, 5, 5, 5 }, { 3, 3, 3, 4, 4, 4, 5, 5, 5 },
@@ -27,11 +27,11 @@ public class Sudoku {
                                                                                                    // exists
                         System.out.println("Duplicate number <" + current_value + "> in row " + r);
                     }
-                    if (!discovered.add("Duplicate number <" + current_value + "> in column " + c)) {
-                        System.out.println("Duplicate number <" + current_value + "> in column " + c);
-                    }
                     if (!discovered.add("Duplicate number <" + current_value + "> in suqare " + r / 3 + "-" + c / 3)) {
                         System.out.println("Duplicate number <" + current_value + "> in suqare " + layout[r][c]);
+                    }
+                    if (!discovered.add("Duplicate number <" + current_value + "> in column " + c)) {
+                        System.out.println("Duplicate number <" + current_value + "> in column " + c);
                     }
                 }
             }
