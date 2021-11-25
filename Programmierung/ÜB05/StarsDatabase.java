@@ -1,4 +1,4 @@
-package ÜB05;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
