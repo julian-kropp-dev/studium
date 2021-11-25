@@ -1,6 +1,6 @@
 package ÜB04;
 
-public class arraymergerV2 {
+public class ArraymergerV2 {
     public static void main(String[] args) {
         int[] array1 = { 1, 3, 3, 5, 6, 9 };
         int[] array2 = { 2, 3, 5, 7, 8, 9, 10 };
