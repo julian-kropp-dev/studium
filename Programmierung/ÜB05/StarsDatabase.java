@@ -1,4 +1,4 @@
-
+package ÜB05;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -45,10 +45,13 @@ public class StarsDatabase {
 
     }
 
+    // DBSize is the length of any array, in this case ids are used
     public static int dbSize() {
         return ids.length;
     }
 
+    // Get the Index of the requested Id by looping through the ids array, return -1
+    // if nothing is found
     public static int indexOfId(String id) {
         for (int i = 0; i < ids.length; i++) {
             if (ids[i].equals(id)) {
@@ -58,10 +61,12 @@ public class StarsDatabase {
         return -1;
     }
 
+    // Return name of star at specific index, as well as it's type
     public static String nameType(int index) {
         return names[index] + " (" + types[index] + ")";
     }
 
+    // Return an array of indices from stars with an distance higher than the input
     public static ArrayList<Integer> lichtjahre(double distance) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < distances.length; i++) {
@@ -72,6 +77,7 @@ public class StarsDatabase {
         return result;
     }
 
+    // Change the type of a specific star to "Moon"
     public static void newType(String id) {
         for (int i = 0; i < ids.length; i++) {
             if (id.equals(ids[i])) {
