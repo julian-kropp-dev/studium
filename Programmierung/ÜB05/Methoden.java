@@ -1,4 +1,4 @@
-
+package ÜB05;
 
 import java.util.Arrays;
 
@@ -29,11 +29,13 @@ public class Methoden {
         }
     }
 
+    // Min: sort array and return first (minimum) value
     public static int min(int[] values) {
         Arrays.sort(values);
         return values[0];
     }
 
+    // Product: loop through array, multiply all values and return double result
     public static double product(double[] values) {
         double result = 1;
         for (int i = 0; i < values.length; i++) {
@@ -42,6 +44,8 @@ public class Methoden {
         return result;
     }
 
+    // LatinLetter: check if the unicode of char is a latin letter and return
+    // boolean
     public static boolean isLatinLetter(char letter) {
         if ((64 < letter && letter < 91) || (96 < letter && letter < 123)) {
             return true;
@@ -49,6 +53,8 @@ public class Methoden {
         return false;
     }
 
+    // IdentityMatrix: create a quadratic matrix of specified size and fill with
+    // zeros, then loop through and change [i][i] to 1 and return the IdentityMatrix
     public static int[][] createIdentityMatrix(int size) {
         int[][] matrix = new int[size][size];
         for (int i = 0; i < size; i++) {
