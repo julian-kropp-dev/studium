@@ -1,5 +1,3 @@
-package ÜB05;
-
 public class Matrix {
     public static void main(String[] args) {
         double[][] a = new double[][] { { 2, 1, 7 }, { 3, 0, 3 } };
