@@ -35,7 +35,6 @@ public class Sudoku {
                     }
                 }
             }
-
         }
         long stopTime = System.nanoTime();
         long time = (stopTime - startTime) / 1000000;

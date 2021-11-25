@@ -1,7 +1,3 @@
-*.pdf
-*.docx
-*.tex
-*.htm
+*
 
-desktop.ini
-.vscode
+!*.java
