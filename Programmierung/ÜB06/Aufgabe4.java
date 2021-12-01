@@ -10,10 +10,17 @@ public class Aufgabe4 {
         int n = sc.nextInt();
         sc.close();
 
+        convert(n);
+
+        System.out.println(n);
+    }
+
+    public static void convert(int n) {
+
         if (n <= 0) {
             System.out.println("Die Zahl muss größer als 0 sein");
         } else {
-            for (; n != 4;) {
+            if (n != 4) {
                 if (n % 10 == 4) {
                     n = (n - 4) / 10;
                 } else if (n % 10 == 0) {
@@ -21,6 +28,7 @@ public class Aufgabe4 {
                 } else {
                     n = n * 2;
                 }
+                convert(n);
                 System.out.println(n);
             }
         }
