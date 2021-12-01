@@ -2,7 +2,7 @@ package ÜB06;
 
 public class Aufgabe3 {
 
-    public static int[] array = { 2, 4, 1, 3, 7 };
+    public static int[] array = { 3, 4, 6, 3, 5, 7 };
     public static int length = 2 * array.length - 1;
 
     public static void main(String[] args) {
@@ -52,8 +52,9 @@ public class Aufgabe3 {
             for (int i = 0; i < result.length; i++) {
                 digits += (int) (Math.log10(result[i]) + 1);
             }
-
-            System.out.print(repeat(length - (result.length - 1 + digits)));
+            if (length - (result.length - 1 + digits) > 0) {
+                System.out.print(repeat(length - (result.length - 1 + digits)));
+            }
             for (int i = 0; i < result.length; i++) {
                 System.out.print(result[i] + " ");
             }
