@@ -4,9 +4,10 @@ public class Aufgabe2 {
     public static void main(String[] args) {
 
         int max = 5;
+
         System.out.println("Sequence: " + symetricDigitSequence(max));
 
-        System.out.println("SequenceRec: " + symetricDigitSequence(max));
+        System.out.println("SequenceRec: " + symetricDigitSequenceRec(max));
     }
 
     public static String symetricDigitSequence(int max) {
