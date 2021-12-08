@@ -16,7 +16,7 @@ public class Test {
 
         Account dagobert = new Account("Dagobart Duck");
         dagobert.owner("Dagobert");
-        dagobert.einzahlen(Math.pow(2D, 53D));
+        dagobert.einzahlen(1297000D);
         dagobert.auszahlen(420000D);
         dagobert.auszahlen(690000D);
         System.out.println(dagobert.owner() + "s Kontostand: " + dagobert.balance() + " EUR");
