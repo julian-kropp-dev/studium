@@ -4,9 +4,9 @@ public class Quicksort {
 	public static void main(String[] args) {
 
 		int[] test = new int[] { 6719, 8130, 3157, 9784, 7634, 1675, 5562, 2088, 4358 };
-		int[] a = new int[] { 23, 14, 53, 69, 42, 78, 44, 38, 39 };
-		int[] b = new int[] { 22, 10, 15, 18, 35, 29, 30, 37, 23 };
-		int[] c = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		// int[] a = new int[] { 23, 14, 53, 69, 42, 78, 44, 38, 39 };
+		// int[] b = new int[] { 22, 10, 15, 18, 35, 29, 30, 37, 23 };
+		// int[] c = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 		print(test);
 		System.out.println();
