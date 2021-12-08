@@ -3,7 +3,7 @@ package ÜB06;
 public class Aufgabe2 {
     public static void main(String[] args) {
 
-        int max = 3;
+        int max = 5;
         System.out.println("Sequence: " + symetricDigitSequence(max));
 
         System.out.println("SequenceRec: " + symetricDigitSequence(max));
@@ -24,7 +24,7 @@ public class Aufgabe2 {
     public static String symetricDigitSequenceRec(int max) {
         String result = String.valueOf(max);
         if (result.length() > 0) {
-            if (result.contains("0")) {
+            if (max > 0) {
                 if (result.charAt(result.length()) == result.charAt(0)) {
                     return result;
                 }
