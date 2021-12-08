@@ -1,4 +1,4 @@
-package ÜB07.Augabe3;
+package ÜB07.Aufgabe3;
 
 public class Libary {
     public static void main(String[] args) {
