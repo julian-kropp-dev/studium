@@ -1,4 +1,4 @@
-package ÜB02;
+package UB02;
 
 import java.math.BigInteger;
 

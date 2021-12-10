@@ -1,4 +1,4 @@
-package ÜB01;
+package UB01;
 
 public class Plus7 {
 	public static void main(String[] args) {

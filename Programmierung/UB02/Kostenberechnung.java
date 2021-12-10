@@ -1,4 +1,4 @@
-package ÜB02;
+package UB02;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;

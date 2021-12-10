@@ -1,4 +1,4 @@
-package ÜB02;
+package UB02;
 
 public class Wertekombination {
     public static void main(String[] args) {
