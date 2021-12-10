@@ -1,4 +1,4 @@
-package ÜB08.Aufgabe3;
+package UB08.Aufgabe3;
 
 public class Sphere {
 

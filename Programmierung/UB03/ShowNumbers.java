@@ -1,4 +1,4 @@
-package ÜB03;
+package UB03;
 
 public class ShowNumbers {
     public static void main(String[] args) {

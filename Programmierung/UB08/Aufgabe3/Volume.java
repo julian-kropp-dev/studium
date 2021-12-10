@@ -1,4 +1,4 @@
-package ÜB08.Aufgabe3;
+package UB08.Aufgabe3;
 
 import java.util.Scanner;
 
@@ -67,7 +67,7 @@ public class Volume {
         double radius;
         do {
             System.out.println("Gebe den Radius einer Kugel ein:");
-            while (!scr.hasNextDouble()) {
+            while (!scr.hasNextDouble()) { // for (;!scr.hasNextDouble();){}
                 System.out.println(
                         "Das ist keine Zahl!\nDu kannst eine postive nicht-ganze Zahl eingeben (z.B.: 10,5)\nGebe den Radius einer Kugel ein:");
                 scr.next();

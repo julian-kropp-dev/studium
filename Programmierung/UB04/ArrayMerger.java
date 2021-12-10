@@ -1,4 +1,4 @@
-package ÜB04;
+package UB04;
 
 public class ArrayMerger {
     public static void main(String[] args) {

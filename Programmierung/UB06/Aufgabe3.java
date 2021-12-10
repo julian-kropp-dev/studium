@@ -1,4 +1,4 @@
-package ÜB06;
+package UB06;
 
 public class Aufgabe3 {
 

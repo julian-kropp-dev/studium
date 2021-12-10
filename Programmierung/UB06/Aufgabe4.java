@@ -1,4 +1,4 @@
-package ÜB06;
+package UB06;
 
 import java.util.Scanner;
 

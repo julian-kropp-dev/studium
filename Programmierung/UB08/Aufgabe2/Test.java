@@ -1,12 +1,11 @@
-package ÜB08.Aufgabe2;
+package UB08.Aufgabe2;
 
 public class Test {
     public static void main(String[] args) {
 
         // Test Accounts
         Account donald = new Account("Donald Duck", 0D);
-        Account dagobert = new Account("Dagobert Duck", 1000000000D);
-        Account phantomias = new Account("Phantomias", 10000D);
+        Account dagobert = new Account("Dagobert Duck", 100000D);
 
         // Auszahlen
         if (!donald.auszahlen(100D)) {

@@ -1,4 +1,4 @@
-package ÜB08.Aufgabe2;
+package UB08.Aufgabe2;
 
 public class Account {
 
@@ -28,25 +28,32 @@ public class Account {
     // }
 
     // EINZAHLEN
-    public void einzahlen(double value) {
-        balance += value;
+    public boolean einzahlen(double value) {
+        if (value > 0) {
+            balance += value;
+            return true;
+        }
+        return false;
     }
 
     // AUSZAHLEN
     public boolean auszahlen(double value) {
-        if (balance - value >= 0) {
-            balance -= value;
-            return true;
+        if (value > 0) {
+            if (balance >= value) {
+                balance -= value;
+                return true;
+            }
         }
         return false;
     }
 
     // Transfer
     public boolean transfer(double amount, Account other) {
-        if (balance - amount >= 0) {
-            balance -= amount;
-            other.einzahlen(amount);
-            return true;
+        if (amount > 0) {
+            if (auszahlen(amount)) {
+                other.einzahlen(amount);
+                return true;
+            }
         }
         return false;
     }

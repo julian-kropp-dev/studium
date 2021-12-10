@@ -1,4 +1,4 @@
-package ÜB08.Aufgabe1;
+package UB08.Aufgabe1;
 
 public class Test {
     public static void main(String[] args) {

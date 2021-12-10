@@ -1,4 +1,4 @@
-package ÜB04;
+package UB04;
 
 import java.util.HashSet;
 

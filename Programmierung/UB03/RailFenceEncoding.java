@@ -1,4 +1,4 @@
-package ÜB03;
+package UB03;
 
 public class RailFenceEncoding {
     public static void main(String[] args) {
