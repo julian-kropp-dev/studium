@@ -1,89 +1,118 @@
-package ÜB05;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+package uebung5;
+import java.util.Arrays;
 
 public class StarsDatabase {
+	
+	public static void main(String[] args) {
+		String[] names = new String[] { "Sirius", "Alpha Centauri", "Rigel",
+										"Almaaz", "Luhman 16" };
+		String[] ids = new String[] { "TYC 5949-2777-1", "TYC 9007-5849-1",
+										"TYC 5331-1752-1", "TYC 2907-1275-1",
+										"WISE J1049-5319A" };
+		double[] distances = new double[] { 8.6, 4.37, 860, 2000, 6.589 };
+//		double[] apparentMagnitudes = new double[] { -1.46, -0.27, 0.13,
+//													2.92, 14.94 };			
+		String[] types = new String[] { "Main sequence", "Main sequence",
+										"Blue supergiant", "Yellow supergiant",
+										"Brown dwarf" };
+		// Aufgabe Teil a)		
+		System.out.println(dataBaseSize( names ));						// da die Groeße der Database der Groeße eines in ihr
+													//	enthaltenen Arrays entspricht kann man einfach dessen Groeße abfragen
+		
+		// Aufgabe Teil b)
+		String suchId = "TYC 2907-1275-1";			// hier kann die gewünschte SuchID eingetragen werden
+		System.out.println(findStarIdxById( suchId, ids));
+		
+		
+		// Aufgabe Teil c)
+		int suchIdx = 2;							// hier kann der gewünschte Suchindex eingetragen werden
+		System.out.println(findStarsByIdx( suchIdx, names, types));
+		
+		
+		// Aufgabe Teil d)
+		double suchDist = 10;						// hier kann die gewünschte Suchdistanz eingetragen werden
+		System.out.println(Arrays.toString(findStarsByDist(suchDist, distances)));
+		
+		
+		// Aufgabe Teil e)
+		String inSuchId = "TYC 5949-2777-1";
+		String inNewType = "Brown dwarf";
+		System.out.println(Arrays.toString(replaceType(inSuchId, inNewType, types, ids)));
+	}
+	
+	/*
+	 * a) ...
+	 * 	Gibt die Groesse der Datenbank, d.h die Anzahl der Eintraege zurueck
+	 * 
+	 */
+	
+	static int dataBaseSize( String[] names) {
+		return	names.length;
+	}
+	
+	
+	/*
+	 * b) ...
+	 * Sucht Stern anhand seiner ID und gibt dessen Index zurück
+	 *  oder -1, falls nicht gefunden.
+	 */
+	
+	static int findStarIdxById( String inSuchId, String[] ids ) {
+		for ( int i = 0; i < ids.length; i++ ) {
+			if ( ids[i].equals( inSuchId ) )		return i;
+		}
+		return	-1;
+	}
+	
+	/*
+	 * c) ...
+	 * Sucht Name und Typ eines Sternes anhand seines Indexes und gibt ihn in der Form „Name (Typ)“ zurück.
+	 */
+	
+	static String findStarsByIdx( int inSuchIdx, String[] inNames, String[] inTypes ) {
+		//
+		String name = inNames[inSuchIdx];
+		String typ = inTypes[inSuchIdx];
+		String NameType = "" + name + " ("+ typ +")";
+		return NameType;
+	}
 
-    // setting up the database as arrays
-    public static String[] names = new String[] { "Sirius", "Alpha Centauri", "Rigel", "Almaaz", "Luhman 16" };
-    public static String[] ids = new String[] { "TYC 5949-2777-1", "TYC 9007-5849-1", "TYC 5331-1752-1",
-            "TYC 2907-1275-1", "WISE J1049-5319A" };
-    public static double[] distances = new double[] { 8.6D, 4.37D, 860D, 2000D, 6.589D };
-    // public static double[] apparentMagitude = new double[] { -1.46D, -0.27D,
-    // 0.13D, 2.92D, 14.94D };
-    public static String[] types = new String[] { "Main sequence", "Main sequence", "Blue supergiant",
-            "Yellow supergiant", "Brown dwarf" };
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        // DBSize
-        System.out.println(dbSize());
-        System.out.println();
-
-        // IndexOfId
-        System.out.println("Please enter the id you\'re looking for: ");
-        String id = scan.nextLine();
-        int result1 = indexOfId(id);
-        if (result1 < 0) {
-            System.out.println("No star found...");
-        } else {
-            System.out.println("Index: " + result1);
-        }
-        System.out.println();
-        scan.close();
-
-        // NameType
-        System.out.println(nameType(3));
-        System.out.println();
-
-        // Lichtjahre
-        ArrayList<Integer> result2 = lichtjahre(1000D);
-        System.out.print(result2);
-        System.out.println();
-
-    }
-
-    // DBSize is the length of any array, in this case ids are used
-    public static int dbSize() {
-        return ids.length;
-    }
-
-    // Get the Index of the requested Id by looping through the ids array, return -1
-    // if nothing is found
-    public static int indexOfId(String id) {
-        for (int i = 0; i < ids.length; i++) {
-            if (ids[i].equals(id)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    // Return name of star at specific index, as well as it's type
-    public static String nameType(int index) {
-        return names[index] + " (" + types[index] + ")";
-    }
-
-    // Return an array of indices from stars with an distance higher than the input
-    public static ArrayList<Integer> lichtjahre(double distance) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        for (int i = 0; i < distances.length; i++) {
-            if (distances[i] < distance) {
-                result.add(i);
-            }
-        }
-        return result;
-    }
-
-    // Change the type of a specific star to "Moon"
-    public static void newType(String id) {
-        for (int i = 0; i < ids.length; i++) {
-            if (id.equals(ids[i])) {
-                types[i] = "Moon";
-                break;
-            }
-        }
-    }
+	/* 
+	 * d) ...
+	 * Sucht Sterne anhand ihrer Distanz
+	 *  und alle mit kleinerer Distanz als inDistance aus.
+	 * Gibt die Indizes der gefundenen Sterne zurück.
+	 */
+	static int[] findStarsByDist( double inSuchDist, double[] inDistances ) {
+		int counter = 0;
+		for (double inDistance : inDistances) {
+			if (inDistance < inSuchDist) counter++;
+		}
+		//
+		int [] result = new int[counter];
+		int result_idx = 0;
+		for ( int i = 0; i < inDistances.length; i++ ) {
+			if ( inDistances[i] <  inSuchDist  ) 		result[result_idx++] = i;
+		}
+		return	result;
+	}
+	
+	/* 
+	 * e) Schreiben Sie eine Methode, die den Typen eines Sternes mit einer gegebenen ID
+	 * 		durch einen neuen Typen ersetzt.
+	 */
+	static String[] replaceType( String inSuchId, String inNewType, String[] types, String[] ids ) {
+		for ( int i = 0; i < ids.length; i++ ) {
+			if ( inSuchId.equals( ids[i] ) )	types[i] = inNewType;
+		}
+		return types;
+	}
+	
 }
+
+// a) Richtig. 1 Punkt.
+// b) Richtig. Das "return i" Statement am besten in einer neuen Zeile einrücken. 1 Punkt.
+// c) Richtig. Kann auch in einem einzigen Return Statement vereint werden. 1 Punkt.
+// d) Richtig. Denkt aber bitte an die Code Conventions. Bei der if-Abfrage beispielsweise geschweifte Klammern nutzen. 4 Punkte.
+// e) Richtig. Ihr könntent auch eure Methode "findStarIdxByStar" nutzen um die Schleife auszulassen. 2 Punkte.
+
