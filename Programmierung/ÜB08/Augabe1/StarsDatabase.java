@@ -41,6 +41,24 @@ public class StarsDatabase {
         return null;
     }
 
+    public Star[] getMagnitudeRange(double low, double high) {
+        int c = 0;
+        for (Star star : db) {
+            if (star.apperentMagnitude() >= low && star.apperentMagnitude() <= high) {
+                c++; // Hä, wieso kein java?
+            }
+        }
+        Star[] result = new Star[c];
+        int i = 0;
+        for (Star star : db) {
+            if (star.apperentMagnitude() >= low && star.apperentMagnitude() <= high) {
+                result[i] = star;
+                i++;
+            }
+        }
+        return result;
+    }
+
     public Star[] db() {
         return db;
     }

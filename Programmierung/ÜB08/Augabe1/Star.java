@@ -55,6 +55,43 @@ public class Star {
         apparentMagnitude = value;
     }
 
+    public boolean isCloserThan(Star other) {
+        if (other.apparentMagnitude < apparentMagnitude) {
+            return true;
+        }
+        return false;
+    }
+
+    public double getDistanceInPC() {
+        return distance / 3.26D;
+    }
+
+    public double getAbsoluteMagnitude() {
+        return apparentMagnitude - 5 * Math.log10(getDistanceInPC()) + 5;
+    }
+
+    public boolean checkType() {
+        String[][] types = { { "Blue supergiant", "Yellow supergiant", "Red supergiant", "Hypergiant" },
+                { "Giant", "Bright giant" }, { "Main sequence", "Subgiant" }, { "Subdwarf" },
+                { "Red dwarf, White dwarf" }, { "Brown dwarf" } };
+        int x = 0;
+        for (int i = 0; i <= 6; i++) {
+            if (-10 + 5 * i <= getAbsoluteMagnitude() && -10 + 5 * (i + 1) >= getAbsoluteMagnitude()) {
+                x = i;
+            }
+        }
+        for (int i = 0; i < types.length; i++) {
+            for (String _type : types[i]) {
+                if (_type.equals(type)) {
+                    if (i == x) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return name;
