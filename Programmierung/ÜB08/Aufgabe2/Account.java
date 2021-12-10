@@ -1,11 +1,11 @@
 public class Account {
-        
-    private String owner = "";                          // OWNER Value
-    private double balance = 0D;                        // BALANCE Value
 
-    public Account(String name, double balance){           // Constructor
+    private String owner = ""; // OWNER Value
+    private double balance = 0D; // BALANCE Value
+
+    public Account(String name, double _balance) { // Constructor
         owner = name;
-        balance = balance;
+        balance = _balance;
     }
 
     public String owner() {
@@ -15,8 +15,6 @@ public class Account {
     public void owner(String value) {
         owner = value;
     }
-
-
 
     public double balance() {
         return balance;
@@ -42,7 +40,7 @@ public class Account {
     }
 
     // Transfer
-    public boolean transfer(double amount, Account other){
+    public boolean transfer(double amount, Account other) {
         if (balance - amount >= 0) {
             balance -= amount;
             other.einzahlen(amount);
