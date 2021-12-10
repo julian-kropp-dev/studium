@@ -1,3 +1,5 @@
+package ÜB08.Aufgabe2;
+
 public class Account {
 
     private String owner = ""; // OWNER Value

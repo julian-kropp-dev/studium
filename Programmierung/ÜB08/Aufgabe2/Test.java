@@ -1,3 +1,5 @@
+package ÜB08.Aufgabe2;
+
 public class Test {
     public static void main(String[] args) {
 
@@ -5,7 +7,6 @@ public class Test {
         Account donald = new Account("Donald Duck", 0D);
         Account dagobert = new Account("Dagobert Duck", 1000000000D);
         Account phantomias = new Account("Phantomias", 10000D);
-
 
         // Auszahlen
         if (!donald.auszahlen(100D)) {
@@ -27,7 +28,7 @@ public class Test {
         System.out.println("Money Transfer");
         if (dagobert.transfer(500, donald)) {
             System.out.println("Erfolgreich");
-   
+
         }
         System.out.println(dagobert.balance());
         System.out.println(donald.balance());

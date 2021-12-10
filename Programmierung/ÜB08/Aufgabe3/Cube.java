@@ -1,3 +1,5 @@
+package ÜB08.Aufgabe3;
+
 public class Cube {
 
     private double edgeLenght = 0D;
@@ -5,17 +7,18 @@ public class Cube {
     public Cube(double cubeedgelenght) {
         edgeLenght = cubeedgelenght;
     }
+
     public double lenght() {
         return edgeLenght;
     }
 
-    public double getSurfaceArea() {  
+    public double getSurfaceArea() {
         double area;
         area = 6 * edgeLenght * edgeLenght;
         return area;
     }
 
-    public double getVolume(){
+    public double getVolume() {
         double volume;
         volume = edgeLenght * edgeLenght * edgeLenght;
         return volume;

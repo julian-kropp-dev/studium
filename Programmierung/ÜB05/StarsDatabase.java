@@ -1,118 +1,124 @@
-package uebung5;
+package ÜB05;
+
 import java.util.Arrays;
 
 public class StarsDatabase {
-	
+
 	public static void main(String[] args) {
 		String[] names = new String[] { "Sirius", "Alpha Centauri", "Rigel",
-										"Almaaz", "Luhman 16" };
+				"Almaaz", "Luhman 16" };
 		String[] ids = new String[] { "TYC 5949-2777-1", "TYC 9007-5849-1",
-										"TYC 5331-1752-1", "TYC 2907-1275-1",
-										"WISE J1049-5319A" };
+				"TYC 5331-1752-1", "TYC 2907-1275-1",
+				"WISE J1049-5319A" };
 		double[] distances = new double[] { 8.6, 4.37, 860, 2000, 6.589 };
-//		double[] apparentMagnitudes = new double[] { -1.46, -0.27, 0.13,
-//													2.92, 14.94 };			
+		// double[] apparentMagnitudes = new double[] { -1.46, -0.27, 0.13,
+		// 2.92, 14.94 };
 		String[] types = new String[] { "Main sequence", "Main sequence",
-										"Blue supergiant", "Yellow supergiant",
-										"Brown dwarf" };
-		// Aufgabe Teil a)		
-		System.out.println(dataBaseSize( names ));						// da die Groeße der Database der Groeße eines in ihr
-													//	enthaltenen Arrays entspricht kann man einfach dessen Groeße abfragen
-		
+				"Blue supergiant", "Yellow supergiant",
+				"Brown dwarf" };
+		// Aufgabe Teil a)
+		System.out.println(dataBaseSize(names)); // da die Groeße der Database der Groeße eines in ihr
+		// enthaltenen Arrays entspricht kann man einfach dessen Groeße abfragen
+
 		// Aufgabe Teil b)
-		String suchId = "TYC 2907-1275-1";			// hier kann die gewünschte SuchID eingetragen werden
-		System.out.println(findStarIdxById( suchId, ids));
-		
-		
+		String suchId = "TYC 2907-1275-1"; // hier kann die gewünschte SuchID eingetragen werden
+		System.out.println(findStarIdxById(suchId, ids));
+
 		// Aufgabe Teil c)
-		int suchIdx = 2;							// hier kann der gewünschte Suchindex eingetragen werden
-		System.out.println(findStarsByIdx( suchIdx, names, types));
-		
-		
+		int suchIdx = 2; // hier kann der gewünschte Suchindex eingetragen werden
+		System.out.println(findStarsByIdx(suchIdx, names, types));
+
 		// Aufgabe Teil d)
-		double suchDist = 10;						// hier kann die gewünschte Suchdistanz eingetragen werden
+		double suchDist = 10; // hier kann die gewünschte Suchdistanz eingetragen werden
 		System.out.println(Arrays.toString(findStarsByDist(suchDist, distances)));
-		
-		
+
 		// Aufgabe Teil e)
 		String inSuchId = "TYC 5949-2777-1";
 		String inNewType = "Brown dwarf";
 		System.out.println(Arrays.toString(replaceType(inSuchId, inNewType, types, ids)));
 	}
-	
+
 	/*
 	 * a) ...
-	 * 	Gibt die Groesse der Datenbank, d.h die Anzahl der Eintraege zurueck
-	 * 
+	 * Gibt die Groesse der Datenbank, d.h die Anzahl der Eintraege zurueck
+	 *
 	 */
-	
-	static int dataBaseSize( String[] names) {
-		return	names.length;
+
+	static int dataBaseSize(String[] names) {
+		return names.length;
 	}
-	
-	
+
 	/*
 	 * b) ...
 	 * Sucht Stern anhand seiner ID und gibt dessen Index zurück
-	 *  oder -1, falls nicht gefunden.
+	 * oder -1, falls nicht gefunden.
 	 */
-	
-	static int findStarIdxById( String inSuchId, String[] ids ) {
-		for ( int i = 0; i < ids.length; i++ ) {
-			if ( ids[i].equals( inSuchId ) )		return i;
+
+	static int findStarIdxById(String inSuchId, String[] ids) {
+		for (int i = 0; i < ids.length; i++) {
+			if (ids[i].equals(inSuchId))
+				return i;
 		}
-		return	-1;
+		return -1;
 	}
-	
+
 	/*
 	 * c) ...
-	 * Sucht Name und Typ eines Sternes anhand seines Indexes und gibt ihn in der Form „Name (Typ)“ zurück.
+	 * Sucht Name und Typ eines Sternes anhand seines Indexes und gibt ihn in der
+	 * Form „Name (Typ)“ zurück.
 	 */
-	
-	static String findStarsByIdx( int inSuchIdx, String[] inNames, String[] inTypes ) {
+
+	static String findStarsByIdx(int inSuchIdx, String[] inNames, String[] inTypes) {
 		//
 		String name = inNames[inSuchIdx];
 		String typ = inTypes[inSuchIdx];
-		String NameType = "" + name + " ("+ typ +")";
+		String NameType = "" + name + " (" + typ + ")";
 		return NameType;
 	}
 
-	/* 
+	/*
 	 * d) ...
 	 * Sucht Sterne anhand ihrer Distanz
-	 *  und alle mit kleinerer Distanz als inDistance aus.
+	 * und alle mit kleinerer Distanz als inDistance aus.
 	 * Gibt die Indizes der gefundenen Sterne zurück.
 	 */
-	static int[] findStarsByDist( double inSuchDist, double[] inDistances ) {
+	static int[] findStarsByDist(double inSuchDist, double[] inDistances) {
 		int counter = 0;
 		for (double inDistance : inDistances) {
-			if (inDistance < inSuchDist) counter++;
+			if (inDistance < inSuchDist)
+				counter++;
 		}
 		//
-		int [] result = new int[counter];
+		int[] result = new int[counter];
 		int result_idx = 0;
-		for ( int i = 0; i < inDistances.length; i++ ) {
-			if ( inDistances[i] <  inSuchDist  ) 		result[result_idx++] = i;
+		for (int i = 0; i < inDistances.length; i++) {
+			if (inDistances[i] < inSuchDist)
+				result[result_idx++] = i;
 		}
-		return	result;
+		return result;
 	}
-	
-	/* 
-	 * e) Schreiben Sie eine Methode, die den Typen eines Sternes mit einer gegebenen ID
-	 * 		durch einen neuen Typen ersetzt.
+
+	/*
+	 * e) Schreiben Sie eine Methode, die den Typen eines Sternes mit einer
+	 * gegebenen ID
+	 * durch einen neuen Typen ersetzt.
 	 */
-	static String[] replaceType( String inSuchId, String inNewType, String[] types, String[] ids ) {
-		for ( int i = 0; i < ids.length; i++ ) {
-			if ( inSuchId.equals( ids[i] ) )	types[i] = inNewType;
+	static String[] replaceType(String inSuchId, String inNewType, String[] types, String[] ids) {
+		for (int i = 0; i < ids.length; i++) {
+			if (inSuchId.equals(ids[i]))
+				types[i] = inNewType;
 		}
 		return types;
 	}
-	
+
 }
 
 // a) Richtig. 1 Punkt.
-// b) Richtig. Das "return i" Statement am besten in einer neuen Zeile einrücken. 1 Punkt.
-// c) Richtig. Kann auch in einem einzigen Return Statement vereint werden. 1 Punkt.
-// d) Richtig. Denkt aber bitte an die Code Conventions. Bei der if-Abfrage beispielsweise geschweifte Klammern nutzen. 4 Punkte.
-// e) Richtig. Ihr könntent auch eure Methode "findStarIdxByStar" nutzen um die Schleife auszulassen. 2 Punkte.
-
+// b) Richtig. Das "return i" Statement am besten in einer neuen Zeile
+// einrücken. 1 Punkt.
+// c) Richtig. Kann auch in einem einzigen Return Statement vereint werden. 1
+// Punkt.
+// d) Richtig. Denkt aber bitte an die Code Conventions. Bei der if-Abfrage
+// beispielsweise geschweifte Klammern nutzen. 4 Punkte.
+// e) Richtig. Ihr könntent auch eure Methode "findStarIdxByStar" nutzen um die
+// Schleife auszulassen. 2 Punkte.
