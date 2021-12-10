@@ -50,9 +50,11 @@ public class Account {
     // Transfer
     public boolean transfer(double amount, Account other) {
         if (amount > 0) {
-            if (auszahlen(amount)) {
-                other.einzahlen(amount);
-                return true;
+            if (other != this) {
+                if (auszahlen(amount)) {
+                    other.einzahlen(amount);
+                    return true;
+                }
             }
         }
         return false;
