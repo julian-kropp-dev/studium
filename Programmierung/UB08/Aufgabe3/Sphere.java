@@ -14,13 +14,13 @@ public class Sphere {
 
     public double getSurfaceArea() {
         double area;
-        area = 4 * radius * radius * Math.PI;
+        area = 4D * Math.pow(radius, 2D) * Math.PI;
         return area;
     }
 
     public double getVolume() {
         double volume;
-        volume = 1.333333 * Math.PI * radius * radius * radius;
+        volume = (4D / 3D) * Math.PI * Math.pow(radius, 3D);
         return volume;
     }
 
