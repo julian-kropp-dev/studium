@@ -74,16 +74,10 @@ public class Star {
         String[][] types = { { "Blue supergiant", "Yellow supergiant", "Red supergiant", "Hypergiant" },
                 { "Giant", "Bright giant" }, { "Main sequence", "Subgiant" }, { "Subdwarf" },
                 { "Red dwarf, White dwarf" }, { "Brown dwarf" } };
-        int x = 0;
-        for (int i = 0; i <= 6; i++) {
-            if (-10 + 5 * i <= getAbsoluteMagnitude() && -10 + 5 * (i + 1) >= getAbsoluteMagnitude()) {
-                x = i;
-            }
-        }
         for (int i = 0; i < types.length; i++) {
             for (String _type : types[i]) {
                 if (_type.equals(type)) {
-                    if (i == x) {
+                    if (-10 + 5 * i <= getAbsoluteMagnitude() && -10 + 5 * (i + 1) >= getAbsoluteMagnitude()) {
                         return true;
                     }
                 }
