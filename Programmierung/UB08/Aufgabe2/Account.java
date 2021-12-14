@@ -7,7 +7,7 @@ public class Account {
 
     /**
      * Konstruktor zum Erstellen eines Kontos mit Initialwert und Owner
-     * 
+     *
      * @param name     Owner dieses Kontos
      * @param _balance Initialwert des Kontos
      */
