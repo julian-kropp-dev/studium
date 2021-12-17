@@ -17,11 +17,11 @@ public class AccountTest {
     void testAuszahlen() {
         // Überprüfen auf Randfälle und Disposition
         for (int i = -1; i < 1; i++) {
-            assertEquals(false, test.auszahlen(i));
+            assertFalse(test.auszahlen(i));
         }
-        assertEquals(false, test.auszahlen(200));
+        assertFalse(test.auszahlen(200));
         // Überprüfen auf richtige Funktion
-        assertEquals(true, test.auszahlen(1));
+        assertTrue(test.auszahlen(1));
         assertEquals(186, test.balance());
     }
 
@@ -36,10 +36,10 @@ public class AccountTest {
     void testEinzahlen() {
         // Überprüfen auf Randfälle
         for (int i = -1; i < 1; i++) {
-            assertEquals(false, test.einzahlen(i));
+            assertFalse(test.einzahlen(i));
         }
         // Überprüfen auf richtige Funktion
-        assertEquals(true, test.einzahlen(1));
+        assertTrue(test.einzahlen(1));
         assertEquals(188, test.balance());
     }
 
@@ -58,12 +58,12 @@ public class AccountTest {
         Account test2 = new Account("Birk", 420);
         // Überprüfen auf Randfälle
         for (int i = -1; i < 1; i++) {
-            assertEquals(false, test.transfer(i, test2));
+            assertFalse(test.transfer(i, test2));
         }
-        assertEquals(false, test.transfer(1, test));
-        assertEquals(false, test.transfer(1000, test2));
+        assertFalse(test.transfer(1, test));
+        assertFalse(test.transfer(1000, test2));
         // Überprüfen auf richtige Funktion
-        assertEquals(true, test.transfer(1, test2));
+        assertTrue(test.transfer(1, test2));
         assertEquals(186, test.balance());
         assertEquals(421, test2.balance());
     }
