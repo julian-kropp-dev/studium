@@ -2,20 +2,20 @@ package UB09.Aufgabe1;
 
 public class Reifen {
 
-    private double profilgüte;
+    private double profilguete;
     private boolean platt;
 
-    public Reifen(double profilgüte, boolean platt) {
-        this.profilgüte = profilgüte;
+    public Reifen(double profilguete, boolean platt) {
+        this.profilguete = profilguete;
         this.platt = platt;
     }
 
-    public double getProfilgüte() {
-        return profilgüte;
+    public double getProfilguete() {
+        return profilguete;
     }
 
-    public void setProfilgüte(double profilgüte) {
-        this.profilgüte = profilgüte;
+    public void setProfilguete(double profilguete) {
+        this.profilguete = profilguete;
     }
 
     public boolean isPlatt() {
