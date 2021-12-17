@@ -5,7 +5,7 @@ public class Auto {
     private Reifen[] reifen;
     private Motor motor;
     private Kofferraum kofferrraum;
-    private int geschwindigkeit;
+    private double geschwindigkeit;
     private int sitze;
     private int tueren;
 
@@ -37,7 +37,7 @@ public class Auto {
         return geschwindigkeit;
     }
 
-    public void setGeschwindigkeit(int geschwindigkeit) {
+    public void setGeschwindigkeit(double geschwindigkeit) {
         this.geschwindigkeit = geschwindigkeit;
     }
 
