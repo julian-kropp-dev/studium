@@ -36,7 +36,7 @@ public class Account {
 
     // AUSZAHLEN
     public boolean auszahlen(double value) {
-        if (balance - value >= 0) {
+        if (balance >= value) {
             balance -= value;
             return true;
         }
